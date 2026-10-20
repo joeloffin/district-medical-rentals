@@ -9,6 +9,17 @@ Website for District Medical Rentals — medical-grade lift chairs and electroni
 - `rates.html` — Weekly pricing
 - `contact.html` — Contact form with notes
 - `privacy.html` — Privacy Policy
+- `locations.html` — Index of all local SEO landing pages
+- `locations/*.html` — Lift chair rental pages by county/city (generated)
+- `sitemap.xml` / `robots.txt` — SEO crawl files
+
+## Generate location SEO pages
+
+```bash
+python3 scripts/generate-locations.py
+```
+
+Set your live site URL in `site.config.json` (`baseUrl`) before deploying so the sitemap is correct.
 
 ## Open locally
 

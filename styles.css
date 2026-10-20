@@ -200,12 +200,54 @@ a {
   max-width: 16ch;
 }
 
+.hero-kicker {
+  margin: 0 0 0.4rem !important;
+  color: #9fe0f7 !important;
+}
+
 .hero-lead {
   margin: 0 0 1rem;
   font-size: clamp(1.02rem, 2.2vw, 1.15rem);
   max-width: 36ch;
   color: rgba(255, 255, 255, 0.94);
   font-weight: 500;
+}
+
+.location-group {
+  text-align: left;
+}
+
+.location-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.45rem;
+  columns: 1;
+}
+
+@media (min-width: 700px) {
+  .location-list {
+    columns: 2;
+    column-gap: 2rem;
+  }
+
+  .location-list li {
+    break-inside: avoid;
+  }
+}
+
+.location-list a {
+  color: var(--blue-dark);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(61, 189, 236, 0.35);
+}
+
+.location-list a:hover,
+.location-list a:focus-visible {
+  color: #1496c4;
+  border-bottom-color: var(--blue-bright);
 }
 
 .hero-actions {

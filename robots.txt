@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://joeloffin.github.io/district-medical-rentals/sitemap.xml
