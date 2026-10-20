@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Contact District Medical Rentals to request a lift chair or medical bed delivery in DC, Maryland, or Virginia."
+    />
+    <title>Contact | District Medical Rentals</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Sora:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand brand-with-logo" href="index.html">
+          <img class="header-logo" src="images/logo.png" alt="" width="72" height="82" />
+          <span>District Medical Rentals</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="rates.html">Rates</a>
+          <a href="contact.html" aria-current="page">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="page page-centered">
+      <header class="page-header">        <h1>Contact</h1>
+        <p>
+          Prefer to talk? Call
+          <a class="inline-phone" href="tel:+19173465309">917-346-5309</a>.
+          Or send a quick request below and we will call you back.
+        </p>
+      </header>
+
+      <form
+        class="contact-form"
+        id="rental-form"
+        action="https://formsubmit.co/offin.joel@gmail.com"
+        method="post"
+        enctype="application/x-www-form-urlencoded"
+        accept-charset="UTF-8"
+        novalidate
+      >
+        <input type="hidden" name="_subject" value="New rental request — District Medical Rentals" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="rental_item" value="" />
+        <div class="form-row">
+          <label for="name">Your name</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            autocomplete="name"
+            required
+            placeholder="Full name"
+          />
+        </div>
+        <div class="form-row">
+          <label for="phone">Phone number</label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            autocomplete="tel"
+            required
+            inputmode="tel"
+            placeholder="917-555-1234"
+          />
+        </div>
+        <div class="form-row">
+          <label for="zip">Delivery zip code</label>
+          <input
+            id="zip"
+            name="zip"
+            type="text"
+            autocomplete="postal-code"
+            required
+            inputmode="numeric"
+            maxlength="10"
+            placeholder="20001"
+          />
+        </div>
+        <div class="form-row">
+          <label for="item">What would you like to rent?</label>
+          <select id="item" name="item" required>
+            <option value="" disabled selected>Choose one</option>
+            <option value="medical-grade-lift-chair">Medical-grade lift chair</option>
+            <option value="electronic-medical-bed">Electronic medical bed</option>
+            <option value="both">Both lift chair and bed</option>
+            <option value="not-sure">Not sure — please call me</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="notes">Notes (optional)</label>
+          <textarea
+            id="notes"
+            name="notes"
+            rows="4"
+            placeholder="Anything we can answer—timing, stairs, pickup date, questions, etc."
+          ></textarea>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Send my request</button>
+        <p class="form-note" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </main>
+
+    <footer class="site-footer">
+      <img class="footer-logo" src="images/logo.png" alt="District Medical Supplies" width="160" height="64" />
+      <p class="footer-brand">District Medical Rentals</p>
+      <p>
+        Medical-grade lift chairs and electronic medical beds delivered in DC, Maryland, and
+        Virginia.
+      </p>
+      <p>
+        <a href="tel:+19173465309">917-346-5309</a>
+      </p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="rates.html">Rates</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </nav>
+    </footer>
+
+    <a class="sticky-call" href="contact.html">Book Now</a>
+
+    <script src="script.js"></script>
+  </body>
+</html>
