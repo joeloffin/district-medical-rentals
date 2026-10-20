@@ -325,11 +325,11 @@ a {
 }
 
 .quote-band {
-  background: var(--blue-dark);
+  background: linear-gradient(120deg, var(--blue-dark) 0%, #1789b8 45%, var(--blue-bright) 100%);
   color: var(--white);
   padding: 2rem 1.25rem;
-  border-top: 4px solid var(--blue-bright);
-  border-bottom: 4px solid var(--blue-bright);
+  border-top: 0;
+  border-bottom: 0;
 }
 
 .quote-band blockquote {
