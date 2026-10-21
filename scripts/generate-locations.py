@@ -5,7 +5,12 @@ from __future__ import annotations
 
 import json
 import re
+import sys
+from datetime import date
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import seo_head as seo  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "locations"
@@ -255,15 +260,12 @@ def page_html(loc: dict) -> str:
         "Clean equipment for safer recovery at home."
     )
 
-    return f"""<!DOCTYPE html>
+    page = f"""<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="{description}" />
-    <meta name="robots" content="index,follow" />
-    <link rel="canonical" href="../locations/{loc['slug']}.html" />
-    <title>{title}</title>
+<!--SEO-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -274,25 +276,6 @@ def page_html(loc: dict) -> str:
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png" />
     <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
     <link rel="stylesheet" href="../styles.css" />
-    <script type="application/ld+json">
-      {{
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "District Medical Rentals",
-        "description": "{description}",
-        "url": "../locations/{loc['slug']}.html",
-        "telephone": "+1-917-346-5309",
-        "areaServed": "{label}",
-        "makesOffer": {{
-          "@type": "Offer",
-          "itemOffered": {{
-            "@type": "Service",
-            "name": "Lift chair rental in {in_place}",
-            "areaServed": "{label}"
-          }}
-        }}
-      }}
-    </script>
   </head>
   <body>
     <header class="site-header">
@@ -311,17 +294,18 @@ def page_html(loc: dict) -> str:
       <section class="hero" id="top" aria-labelledby="hero-heading">
         <div class="hero-media" role="img" aria-label="Medical-grade lift chair rental in {in_place}">
           <img
-            src="../images/hero-lift-chair.png"
+            src="../images/hero-lift-chair.webp"
             alt="Woman standing from a medical-grade power lift recliner with a cane at home"
-            width="1200"
-            height="1600"
+            width="858"
+            height="1024"
+            fetchpriority="high"
           />
         </div>
         <div class="hero-copy">
           <img
             class="hero-logo"
-            src="../images/logo.png"
-            alt="District Medical Supplies"
+            src="../images/logo.webp"
+            alt="District Medical Rentals logo"
             width="280"
             height="320"
           />
@@ -343,8 +327,40 @@ def page_html(loc: dict) -> str:
         </blockquote>
       </section>
 
+      <ul class="trust-bar" aria-label="Why families choose us">
+        <li class="trust-item">
+          <span class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z" /><path d="M9 12l2 2 4-4" /></svg>
+          </span>
+          <strong>Medical-grade</strong>
+          <span>Equipment built for safe recovery</span>
+        </li>
+        <li class="trust-item">
+          <span class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3l1.8 4.7 4.7 1.8-4.7 1.8L12 16l-1.8-4.7-4.7-1.8 4.7-1.8z" /><path d="M19 15l.8 2.2 2.2.8-2.2.8L19 21l-.8-2.2-2.2-.8 2.2-.8z" /></svg>
+          </span>
+          <strong>Cleaned &amp; sanitized</strong>
+          <span>Before every rental</span>
+        </li>
+        <li class="trust-item">
+          <span class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 6h11v9H3z" /><path d="M14 9h4l3 3v3h-7z" /><circle cx="7" cy="17.5" r="1.8" /><circle cx="17" cy="17.5" r="1.8" /></svg>
+          </span>
+          <strong>Fast delivery</strong>
+          <span>Same-day &amp; next-day</span>
+        </li>
+        <li class="trust-item">
+          <span class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8z" /><circle cx="7.5" cy="8.5" r="1.5" /></svg>
+          </span>
+          <strong>No deposit</strong>
+          <span>Simple weekly rates</span>
+        </li>
+      </ul>
+
+      <div class="band-soft">
       <section class="section" id="products" aria-labelledby="products-heading">
-        <div class="section-intro">
+        <div class="section-intro section-intro-center">
           <h2 id="products-heading">Lift chair &amp; bed rentals in {short}</h2>
           <p>
             We deliver medical-grade equipment across {loc['state_name']}—including {place}—
@@ -356,22 +372,28 @@ def page_html(loc: dict) -> str:
           <article class="product">
             <div class="product-visual product-visual-chairs">
               <img
-                src="../images/lift-chair-1.png"
+                src="../images/lift-chair-1.webp"
                 alt="Man using a medical-grade lift chair to stand safely at home"
-                width="900"
-                height="600"
+                width="966"
+                height="662"
+                loading="lazy"
+                decoding="async"
               />
               <img
-                src="../images/lift-chair-2.png"
+                src="../images/lift-chair-2.webp"
                 alt="Woman standing with help from a gray power lift recliner"
-                width="900"
-                height="1200"
+                width="726"
+                height="830"
+                loading="lazy"
+                decoding="async"
               />
               <img
-                src="../images/lift-chair-3.png"
+                src="../images/lift-chair-3.webp"
                 alt="Couple at home with a reclined medical-grade lift chair"
-                width="900"
-                height="600"
+                width="982"
+                height="736"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div class="product-copy">
@@ -380,22 +402,30 @@ def page_html(loc: dict) -> str:
                 Power lift chairs that help you stand and sit safely—ideal after surgery or for
                 limited mobility. Available for rental delivery in {in_place}.
               </p>
+              <div class="product-meta">
+                <p class="product-price">From <span>$125</span>/week</p>
+                <a class="text-link" href="../rates.html">See rates →</a>
+              </div>
             </div>
           </article>
 
           <article class="product">
             <div class="product-visual">
               <img
-                src="../images/medical-bed-1.png"
+                src="../images/medical-bed-1.webp"
                 alt="Caregiver helping a patient in an adjustable electronic medical bed at home"
-                width="900"
-                height="600"
+                width="1002"
+                height="876"
+                loading="lazy"
+                decoding="async"
               />
               <img
-                src="../images/medical-bed-2.png"
+                src="../images/medical-bed-2.webp"
                 alt="Woman sitting up in a home medical bed with a visitor beside her"
-                width="900"
-                height="600"
+                width="980"
+                height="860"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div class="product-copy">
@@ -404,10 +434,15 @@ def page_html(loc: dict) -> str:
                 Adjustable beds that raise the head and feet for comfort and safer rest during
                 recovery. Delivered to homes in {in_place}.
               </p>
+              <div class="product-meta">
+                <p class="product-price">From <span>$240</span>/week</p>
+                <a class="text-link" href="../rates.html">See rates →</a>
+              </div>
             </div>
           </article>
         </div>
       </section>
+      </div>
 
       <section class="section delivery-section" id="service-area" aria-labelledby="area-heading">
         <div class="delivery-layout">
@@ -458,10 +493,16 @@ def page_html(loc: dict) -> str:
             </p>
           </details>
           <details class="faq-item">
+            <summary>How fast can you deliver?</summary>
+            <p>
+              Same-day and next-day delivery at no extra charge. We can even deliver before your
+              surgery so everything is ready when you get home.
+            </p>
+          </details>
+          <details class="faq-item">
             <summary>What’s your pricing?</summary>
             <p>
-              Medical-grade lift chairs are <strong>$125 per week</strong>. Medical rental beds
-              are <strong>$240 per week</strong>. See our
+              Lift chairs start at <strong>$125 per week</strong> and hospital beds start at <strong>$240 per week</strong>. Save 10% when you rent both, rentals longer than 4 weeks are discounted, and there’s no deposit. See our
               <a href="../rates.html">rates page</a>.
             </p>
           </details>
@@ -475,10 +516,19 @@ def page_html(loc: dict) -> str:
           </details>
         </div>
       </section>
+
+      <section class="cta-band" aria-labelledby="cta-heading">
+        <h2 id="cta-heading">Recover comfortably at home in {short}</h2>
+        <p>
+          Book your lift chair or medical bed today, or call
+          <a href="tel:+19173465309">917-346-5309</a>.
+        </p>
+        <a class="btn btn-primary" href="../contact.html">Book Now</a>
+      </section>
     </main>
 
     <footer class="site-footer">
-      <img class="footer-logo" src="../images/logo.png" alt="District Medical Supplies" width="120" height="136" />
+      <img class="footer-logo" src="../images/logo.webp" alt="District Medical Rentals logo" width="120" height="136" />
       <p class="footer-brand">District Medical Rentals</p>
       <p>Lift chair rental in {in_place} — delivered for home recovery.</p>
       <p><a href="tel:+19173465309">917-346-5309</a></p>
@@ -496,6 +546,33 @@ def page_html(loc: dict) -> str:
   </body>
 </html>
 """
+    path = f"locations/{loc['slug']}.html"
+    service = {
+        "@type": "Service",
+        "@id": seo.abs_url(path) + "#service",
+        "name": f"Lift chair rental in {in_place}",
+        "serviceType": "Medical equipment rental",
+        "description": description,
+        "url": seo.abs_url(path),
+        "provider": seo.business_entity(),
+        "areaServed": {
+            "@type": "City" if loc["kind"] == "city" else "AdministrativeArea",
+            "name": label,
+        },
+        "offers": [
+            seo.offer("Medical-grade lift chair rental", 125),
+            seo.offer("Hospital bed rental", 240),
+        ],
+    }
+    graph = [
+        service,
+        seo.breadcrumb([("Home", ""), ("Locations", "locations.html"), (label, path)]),
+        seo.faq_entity(page),
+    ]
+    return page.replace(
+        "<!--SEO-->",
+        seo.head_block(title=title, description=description, path=path, graph=graph),
+    )
 
 
 def locations_index_html(locations: list[dict]) -> str:
@@ -511,16 +588,38 @@ def locations_index_html(locations: list[dict]) -> str:
             for loc in items
         )
 
+    index_seo = seo.head_block(
+        title="Lift Chair Rental Near You: DC, Maryland & Virginia | District Medical Rentals",
+        description=(
+            "Find lift chair and medical bed rental delivery in your county or city across "
+            "Washington DC, Maryland, and Virginia. Medical-grade equipment delivered to your home."
+        ),
+        path="locations.html",
+        graph=[
+            seo.breadcrumb([("Home", ""), ("Locations", "locations.html")]),
+            {
+                "@type": "ItemList",
+                "name": "Lift chair rental locations",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": i,
+                        "url": seo.abs_url(f"locations/{loc['slug']}.html"),
+                        "name": f"Lift chair rental in {loc['name']}"
+                        + (f", {loc['state']}" if loc["state"] != "DC" else ""),
+                    }
+                    for i, loc in enumerate(locations, start=1)
+                ],
+            },
+        ],
+    )
+
     return f"""<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Lift chair rental delivery locations across Washington DC, Maryland, and Virginia — District Medical Rentals."
-    />
-    <title>Lift Chair Rental Locations | District Medical Rentals</title>
+{index_seo}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -536,7 +635,7 @@ def locations_index_html(locations: list[dict]) -> str:
     <header class="site-header">
       <div class="header-inner">
         <a class="brand brand-with-logo" href="index.html">
-          <img class="header-logo" src="images/logo.png" alt="" width="72" height="82" />
+          <img class="header-logo" src="images/logo.webp" alt="" width="72" height="82" />
           <span>District Medical Rentals</span>
         </a>
         <nav class="nav" aria-label="Primary">
@@ -580,7 +679,7 @@ def locations_index_html(locations: list[dict]) -> str:
     </main>
 
     <footer class="site-footer">
-      <img class="footer-logo" src="images/logo.png" alt="District Medical Supplies" width="120" height="136" />
+      <img class="footer-logo" src="images/logo.webp" alt="District Medical Rentals logo" width="120" height="136" />
       <p class="footer-brand">District Medical Rentals</p>
       <p>Medical-grade lift chairs and beds delivered in DC, Maryland, and Virginia.</p>
       <p><a href="tel:+19173465309">917-346-5309</a></p>
@@ -616,9 +715,11 @@ def write_sitemap(locations: list[dict], base_url: str) -> None:
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ]
+    today = date.today().isoformat()
     for path in urls:
         parts.append("  <url>")
         parts.append(f"    <loc>{base}{path if path else '/'}</loc>")
+        parts.append(f"    <lastmod>{today}</lastmod>")
         parts.append("  </url>")
     parts.append("</urlset>")
     (ROOT / "sitemap.xml").write_text("\n".join(parts) + "\n", encoding="utf-8")

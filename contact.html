@@ -3,11 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Contact District Medical Rentals to request a lift chair or medical bed delivery in DC, Maryland, or Virginia."
-    />
-    <title>Contact | District Medical Rentals</title>
+    <!-- seo:start -->
+    <title>Book a Lift Chair or Medical Bed Rental | District Medical Rentals</title>
+    <meta name="description" content="Request a lift chair or medical bed rental delivered in DC, Maryland, or Virginia. Send a quick form or call 917-346-5309 and we’ll confirm your delivery." />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://joeloffin.github.io/district-medical-rentals/contact.html" />
+    <meta name="theme-color" content="#0b3a66" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="District Medical Rentals" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Book a Lift Chair or Medical Bed Rental | District Medical Rentals" />
+    <meta property="og:description" content="Request a lift chair or medical bed rental delivered in DC, Maryland, or Virginia. Send a quick form or call 917-346-5309 and we’ll confirm your delivery." />
+    <meta property="og:url" content="https://joeloffin.github.io/district-medical-rentals/contact.html" />
+    <meta property="og:image" content="https://joeloffin.github.io/district-medical-rentals/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="District Medical Rentals logo over a lift chair" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Book a Lift Chair or Medical Bed Rental | District Medical Rentals" />
+    <meta name="twitter:description" content="Request a lift chair or medical bed rental delivered in DC, Maryland, or Virginia. Send a quick form or call 917-346-5309 and we’ll confirm your delivery." />
+    <meta name="twitter:image" content="https://joeloffin.github.io/district-medical-rentals/images/og-image.jpg" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://joeloffin.github.io/district-medical-rentals/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Contact",
+                "item": "https://joeloffin.github.io/district-medical-rentals/contact.html"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <!-- seo:end -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,11 +59,11 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="no-sticky">
     <header class="site-header">
       <div class="header-inner">
         <a class="brand brand-with-logo" href="index.html">
-          <img class="header-logo" src="images/logo.png" alt="" width="72" height="82" />
+          <img class="header-logo" src="images/logo.webp" alt="" width="72" height="82" />
           <span>District Medical Rentals</span>
         </a>
         <nav class="nav" aria-label="Primary">
@@ -43,6 +83,17 @@
           Or send a quick request below and we will call you back.
         </p>
       </header>
+
+      <aside class="text-callout" aria-label="Text us">
+        <span class="text-callout-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z" /><path d="M8 10h.01M12 10h.01M16 10h.01" /></svg>
+        </span>
+        <div class="text-callout-copy">
+          <p><strong>Need it fast? Text us.</strong></p>
+          <p>For an ultra-fast response, text <a href="sms:+19173465309">917-346-5309</a>.</p>
+        </div>
+        <a class="btn btn-primary" href="sms:+19173465309">Text Us</a>
+      </aside>
 
       <form
         class="contact-form"
@@ -115,10 +166,28 @@
         <button class="btn btn-primary btn-block" type="submit">Send my request</button>
         <p class="form-note" id="form-status" role="status" aria-live="polite"></p>
       </form>
+
+      <section class="next-steps" aria-labelledby="next-heading">
+        <h2 id="next-heading">What happens next</h2>
+        <ol class="plain-steps">
+          <li>
+            <h3>1. We call you</h3>
+            <p>To go over your request.</p>
+          </li>
+          <li>
+            <h3>2. We confirm</h3>
+            <p>Item, drop-off time, and place.</p>
+          </li>
+          <li>
+            <h3>3. We deliver</h3>
+            <p>Clean and ready to use.</p>
+          </li>
+        </ol>
+      </section>
     </main>
 
     <footer class="site-footer">
-      <img class="footer-logo" src="images/logo.png" alt="District Medical Supplies" width="160" height="64" />
+      <img class="footer-logo" src="images/logo.webp" alt="District Medical Rentals logo" width="120" height="136" />
       <p class="footer-brand">District Medical Rentals</p>
       <p>
         Medical-grade lift chairs and electronic medical beds delivered in DC, Maryland, and
@@ -136,8 +205,6 @@
         <a href="privacy.html">Privacy Policy</a>
       </nav>
     </footer>
-
-    <a class="sticky-call" href="contact.html">Book Now</a>
 
     <script src="script.js"></script>
   </body>

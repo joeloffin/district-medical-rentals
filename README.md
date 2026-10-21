@@ -21,6 +21,15 @@ python3 scripts/generate-locations.py
 
 Set your live site URL in `site.config.json` (`baseUrl`) before deploying so the sitemap is correct.
 
+## SEO tags and structured data
+
+Titles, descriptions, canonical URLs, social share tags, and JSON-LD for the top-level pages live in
+`scripts/seo_head.py`. After editing page titles, FAQs, or prices, refresh everything with:
+
+```bash
+python3 scripts/seo_head.py && python3 scripts/generate-locations.py
+```
+
 ## Open locally
 
 Open `index.html` in a browser, or from this folder run:
