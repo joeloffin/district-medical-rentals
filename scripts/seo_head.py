@@ -44,7 +44,7 @@ def offer(name: str, price: int) -> dict:
             "referenceQuantity": {"@type": "QuantitativeValue", "value": 1, "unitCode": "WEE"},
             "description": (
                 "Starting weekly rate. Discounts on rentals longer than 4 weeks; save 10% when "
-                "renting a lift recliner and hospital bed together. No deposit."
+                "renting two or more items together. No deposit."
             ),
         },
     }
@@ -61,8 +61,8 @@ def business_entity() -> dict:
         "telephone": PHONE,
         "priceRange": "$$",
         "description": (
-            "Medical-grade lift chair and electronic medical bed rentals delivered to homes in "
-            "Washington DC, Maryland, and Virginia."
+            "Medical-grade lift chairs, sit-to-stand patient lifts, and electronic medical beds "
+            "delivered to homes in Washington DC, Maryland, and Virginia."
         ),
         "areaServed": [
             {"@type": "City", "name": "Washington, DC"},
@@ -74,6 +74,7 @@ def business_entity() -> dict:
             "name": "Home recovery equipment rentals",
             "itemListElement": [
                 offer("Medical-grade lift chair rental", 125),
+                offer("Sit-to-stand patient lift rental", 140),
                 offer("Hospital bed rental", 240),
             ],
         },
@@ -177,7 +178,7 @@ PAGES = {
     "index.html": {
         "title": "Lift Chair & Medical Bed Rentals in DC, MD & VA | District Medical Rentals",
         "description": (
-            "Rent medical-grade lift chairs and electronic medical beds delivered to your home in "
+            "Rent medical-grade lift chairs, sit-to-stand lifts, and electronic medical beds delivered to your home in "
             "Washington DC, Maryland, and Virginia. Lift chairs from $125/week. Call 917-346-5309."
         ),
         "path": "",
@@ -188,25 +189,25 @@ PAGES = {
         "title": "About Us | Home Recovery Equipment Rentals in DC, MD & VA",
         "description": (
             "District Medical Rentals is a local DC-area team renting clean, medical-grade lift "
-            "chairs and electronic medical beds for recovery at home in Maryland, Virginia, and DC."
+            "chairs, sit-to-stand lifts, and electronic medical beds for recovery at home in Maryland, Virginia, and DC."
         ),
         "path": "about.html",
         "crumbs": [("Home", ""), ("About", "about.html")],
     },
     "rates.html": {
-        "title": "Lift Chair & Medical Bed Rental Prices | District Medical Rentals",
+        "title": "Lift Chair, Sit-to-Stand & Medical Bed Rental Prices | District Medical Rentals",
         "description": (
-            "Lift recliners from $125/week, hospital beds from $240/week. Save 10% on bundles, "
-            "no deposit, same-day and next-day delivery in DC, Maryland, and Virginia."
+            "Lift recliners from $125/week, sit-to-stand lifts from $140/week, hospital beds from $240/week. "
+            "Save 10% when you rent two or more. No deposit. Delivery in DC, Maryland, and Virginia."
         ),
         "path": "rates.html",
         "crumbs": [("Home", ""), ("Rates", "rates.html")],
         "business": True,
     },
     "contact.html": {
-        "title": "Book a Lift Chair or Medical Bed Rental | District Medical Rentals",
+        "title": "Book a Lift Chair, Sit-to-Stand Lift, or Medical Bed | District Medical Rentals",
         "description": (
-            "Request a lift chair or medical bed rental delivered in DC, Maryland, or Virginia. "
+            "Request a lift chair, sit-to-stand patient lift, or medical bed rental delivered in DC, Maryland, or Virginia. "
             "Send a quick form or call 917-346-5309 and we’ll confirm your delivery."
         ),
         "path": "contact.html",

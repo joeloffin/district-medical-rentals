@@ -1761,8 +1761,16 @@ a {
     gap: 2rem;
   }
 
+  .product-grid .product:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+
+  .product-grid .product:nth-child(3) .product-visual-chairs {
+    grid-template-columns: 1.2fr 0.9fr 1.2fr;
+  }
+
   .rate-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
     max-width: 64rem;
   }

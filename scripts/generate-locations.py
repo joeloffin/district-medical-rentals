@@ -252,7 +252,7 @@ def page_html(loc: dict) -> str:
     title = f"District Medical Rentals | Rent a lift chair in {in_place} delivered to you"
     description = (
         f"Lift chair rental in {in_place}. District Medical Rentals delivers medical-grade "
-        f"lift chairs and electronic medical beds for post-surgery recovery at home."
+        f"lift chairs, sit-to-stand lifts, and electronic medical beds for post-surgery recovery at home."
     )
     h1 = f"Rent a lift chair in {in_place} — delivered to you"
     lead = (
@@ -440,6 +440,46 @@ def page_html(loc: dict) -> str:
               </div>
             </div>
           </article>
+
+          <article class="product">
+            <div class="product-visual product-visual-chairs">
+              <img
+                src="../images/sit-to-stand-1.webp"
+                alt="Caregiver using a sit-to-stand lift to help a man stand beside a hospital bed"
+                width="1024"
+                height="500"
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                src="../images/sit-to-stand-2.webp"
+                alt="Close view of a person holding the handles of a sit-to-stand patient lift"
+                width="1024"
+                height="508"
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                src="../images/sit-to-stand-3.webp"
+                alt="Caregiver helping a man use a sit-to-stand lift in a bathroom"
+                width="1024"
+                height="682"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="product-copy">
+              <h3>Sit-to-stand patient lifts</h3>
+              <p>
+                A standing aid that helps a caregiver raise someone from a chair, bed, wheelchair,
+                or toilet. Available for rental delivery in {in_place}.
+              </p>
+              <div class="product-meta">
+                <p class="product-price">From <span>$140</span>/week</p>
+                <a class="text-link" href="../rates.html">See rates →</a>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
       </div>
@@ -502,7 +542,9 @@ def page_html(loc: dict) -> str:
           <details class="faq-item">
             <summary>What’s your pricing?</summary>
             <p>
-              Lift chairs start at <strong>$125 per week</strong> and hospital beds start at <strong>$240 per week</strong>. Save 10% when you rent both, rentals longer than 4 weeks are discounted, and there’s no deposit. See our
+              Lift chairs start at <strong>$125 per week</strong>, sit-to-stand lifts at
+              <strong>$140 per week</strong>, and hospital beds at <strong>$240 per week</strong>.
+              Save 10% when you rent two or more items. Rentals longer than 4 weeks are discounted, and there’s no deposit. See our
               <a href="../rates.html">rates page</a>.
             </p>
           </details>
@@ -561,6 +603,7 @@ def page_html(loc: dict) -> str:
         },
         "offers": [
             seo.offer("Medical-grade lift chair rental", 125),
+            seo.offer("Sit-to-stand patient lift rental", 140),
             seo.offer("Hospital bed rental", 240),
         ],
     }
@@ -681,7 +724,7 @@ def locations_index_html(locations: list[dict]) -> str:
     <footer class="site-footer">
       <img class="footer-logo" src="images/logo.webp" alt="District Medical Rentals logo" width="120" height="136" />
       <p class="footer-brand">District Medical Rentals</p>
-      <p>Medical-grade lift chairs and beds delivered in DC, Maryland, and Virginia.</p>
+      <p>Medical-grade lift chairs, sit-to-stand lifts, and beds delivered in DC, Maryland, and Virginia.</p>
       <p><a href="tel:+19173465309">917-346-5309</a></p>
       <nav class="footer-nav" aria-label="Footer">
         <a href="index.html">Home</a>
