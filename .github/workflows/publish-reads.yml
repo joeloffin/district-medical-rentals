@@ -1,0 +1,31 @@
+name: Publish recovery reads
+
+on:
+  schedule:
+    # 12:15 UTC, about 8:15 a.m. Eastern. Publishes that day's three articles.
+    - cron: "15 12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 scripts/publish-reads.py
+      - name: Commit published reads
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add about.html sitemap.xml articles
+          if git diff --staged --quiet; then
+            echo "No new reads to publish."
+          else
+            git commit -m "Publish today's recovery reads"
+            git push
+          fi
