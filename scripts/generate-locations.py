@@ -710,6 +710,10 @@ def write_sitemap(locations: list[dict], base_url: str) -> None:
         "/locations.html",
     ]
     urls += [f"/locations/{loc['slug']}.html" for loc in locations]
+    urls += [
+        f"/articles/{path.name}"
+        for path in sorted((ROOT / "articles").glob("*.html"))
+    ]
 
     parts = [
         '<?xml version="1.0" encoding="UTF-8"?>',
