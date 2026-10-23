@@ -91,7 +91,7 @@ ARTICLES = [
         "paragraphs": [
             "Bedrooms upstairs, or down a narrow hall, are a poor daytime spot if the bathroom and kitchen are elsewhere. A lift recliner in the main room keeps you with the household and close to food, the phone, and the bathroom.",
             "Place it so you can see the door and reach a lamp without standing. A small table on the strong side holds water, meds, and the remote.",
-            "When nights are the hard part, pair the chair with a hospital bed. Renting both together is 10 percent off.",
+            "When nights are the hard part, pair the chair with a hospital bed. Renting two or more items together is 10 percent off.",
         ],
     },
     {
@@ -250,7 +250,7 @@ ARTICLES = [
         "description": "Choose a lift recliner when standing from a seat is the problem. Choose a hospital bed when rest, breathing, or getting out of bed is the problem.",
         "paragraphs": [
             "If the complaint is “I cannot get out of the chair,” start with a lift recliner. If the complaint is “I cannot sit up or get out of bed,” start with a hospital bed. Plenty of recoveries need both, at different hours.",
-            "Daytime in the chair keeps you moving a little. Nighttime in an adjustable bed keeps you positioned. Renting the pair is 10 percent off both weekly rates.",
+            "Daytime in the chair keeps you moving a little. Nighttime in an adjustable bed keeps you positioned. Renting two or more items is 10 percent off.",
             "Not sure? Say so on the form. We call you back and decide from the surgery, the home, and who is helping.",
         ],
     },
@@ -321,7 +321,7 @@ ARTICLES = [
         "paragraphs": [
             "Sleeping in a chair every night bothers some people. Living only in a hospital bed bothers others. Using each for what it is good at is a common setup: chair for the hours you are up, bed for the hours you are down.",
             "Put them in the same room if walking between rooms is the risky part. Put them on the same floor as the bathroom either way.",
-            "The bundle discount is 10 percent when you rent both. Weekly rates start at $125 for the recliner and $240 for the bed.",
+            "The bundle discount is 10 percent when you rent two or more items. Weekly rates start at $125 for the recliner, $140 for the sit-to-stand lift, and $240 for the bed.",
         ],
     },
     {
