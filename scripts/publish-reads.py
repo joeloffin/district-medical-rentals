@@ -95,12 +95,12 @@ def page_html(day: date, article: dict, related: list[tuple[date, dict]]) -> str
   <body>
     <header class="site-header">
       <div class="header-inner">
-        <a class="brand brand-with-logo" href="../index.html">
+        <a class="brand brand-with-logo" href="/">
           <img class="header-logo" src="../images/logo.webp" alt="" width="72" height="82" />
           <span>District Medical Rentals</span>
         </a>
         <nav class="nav" aria-label="Primary">
-          <a href="../index.html">Home</a>
+          <a href="/">Home</a>
           <a href="../about.html" aria-current="page">About</a>
           <a href="../rates.html">Rates</a>
           <a href="../contact.html">Contact</a>
@@ -140,7 +140,7 @@ def page_html(day: date, article: dict, related: list[tuple[date, dict]]) -> str
       <p>Medical-grade lift chairs, sit-to-stand lifts, and beds delivered in DC, Maryland, and Virginia.</p>
       <p><a href="tel:+19173465309">917-346-5309</a></p>
       <nav class="footer-nav" aria-label="Footer">
-        <a href="../index.html">Home</a>
+        <a href="/">Home</a>
         <a href="../about.html">About</a>
         <a href="../rates.html">Rates</a>
         <a href="../contact.html">Contact</a>
