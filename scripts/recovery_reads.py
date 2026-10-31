@@ -161,7 +161,7 @@ ARTICLES = [
         "paragraphs": [
             "We bring the equipment to the room you choose and set it up. You can help by clearing a path from the entrance: shoes, rugs, and narrow furniture moved for an hour.",
             "Hospital beds need a bit more floor space than a recliner, plus an outlet that is not already overloaded. Measure doorways if you are unsure. A photo of the room, texted to us, saves a surprise.",
-            "Delivery, setup, and later pickup are one fee based on your zone. Zone 1 is $25. Zone 2 is $45.",
+            "Delivery, setup, and later pickup are one fee based on your zone. Call or text 917-346-5309 for that fee.",
         ],
     },
     {
@@ -321,7 +321,7 @@ ARTICLES = [
         "paragraphs": [
             "Sleeping in a chair every night bothers some people. Living only in a hospital bed bothers others. Using each for what it is good at is a common setup: chair for the hours you are up, bed for the hours you are down.",
             "Put them in the same room if walking between rooms is the risky part. Put them on the same floor as the bathroom either way.",
-            "The bundle discount is 10 percent when you rent two or more items. Weekly rates start at $125 for the recliner, $140 for the sit-to-stand lift, and $240 for the bed.",
+            "The bundle discount is 10 percent when you rent two or more items. Call or text 917-346-5309 for weekly rates.",
         ],
     },
     {

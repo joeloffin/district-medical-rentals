@@ -403,7 +403,7 @@ def page_html(loc: dict) -> str:
                 limited mobility. Available for rental delivery in {in_place}.
               </p>
               <div class="product-meta">
-                <p class="product-price">From <span>$125</span>/week</p>
+                <p class="product-price"><a href="tel:+19173465309">Call or text for rates</a></p>
                 <a class="text-link" href="../rates.html">See rates →</a>
               </div>
             </div>
@@ -435,7 +435,7 @@ def page_html(loc: dict) -> str:
                 recovery. Delivered to homes in {in_place}.
               </p>
               <div class="product-meta">
-                <p class="product-price">From <span>$240</span>/week</p>
+                <p class="product-price"><a href="tel:+19173465309">Call or text for rates</a></p>
                 <a class="text-link" href="../rates.html">See rates →</a>
               </div>
             </div>
@@ -475,7 +475,7 @@ def page_html(loc: dict) -> str:
                 or toilet. Available for rental delivery in {in_place}.
               </p>
               <div class="product-meta">
-                <p class="product-price">From <span>$140</span>/week</p>
+                <p class="product-price"><a href="tel:+19173465309">Call or text for rates</a></p>
                 <a class="text-link" href="../rates.html">See rates →</a>
               </div>
             </div>
@@ -542,8 +542,7 @@ def page_html(loc: dict) -> str:
           <details class="faq-item">
             <summary>What’s your pricing?</summary>
             <p>
-              Lift chairs start at <strong>$125 per week</strong>, sit-to-stand lifts at
-              <strong>$140 per week</strong>, and hospital beds at <strong>$240 per week</strong>.
+              Call or text <a href="tel:+19173465309">917-346-5309</a> for weekly rates.
               Save 10% when you rent two or more items. Rentals longer than 4 weeks are discounted, and there’s no deposit. See our
               <a href="../rates.html">rates page</a>.
             </p>
@@ -602,9 +601,9 @@ def page_html(loc: dict) -> str:
             "name": label,
         },
         "offers": [
-            seo.offer("Medical-grade lift chair rental", 125),
-            seo.offer("Sit-to-stand patient lift rental", 140),
-            seo.offer("Hospital bed rental", 240),
+            seo.offer("Medical-grade lift chair rental"),
+            seo.offer("Sit-to-stand patient lift rental"),
+            seo.offer("Hospital bed rental"),
         ],
     }
     graph = [

@@ -30,23 +30,14 @@ def abs_url(path: str) -> str:
     return f"{base_url()}/{path.lstrip('/')}"
 
 
-def offer(name: str, price: int) -> dict:
+def offer(name: str) -> dict:
     return {
         "@type": "Offer",
         "itemOffered": {"@type": "Service", "name": name},
-        "priceCurrency": "USD",
-        "price": f"{price}.00",
-        "priceSpecification": {
-            "@type": "UnitPriceSpecification",
-            "price": f"{price}.00",
-            "priceCurrency": "USD",
-            "unitText": "week",
-            "referenceQuantity": {"@type": "QuantitativeValue", "value": 1, "unitCode": "WEE"},
-            "description": (
-                "Starting weekly rate. Discounts on rentals longer than 4 weeks; save 10% when "
-                "renting two or more items together. No deposit."
-            ),
-        },
+        "description": (
+            "Call or text for the weekly rate. Discounts on rentals longer than 4 weeks; "
+            "save 10% when renting two or more items together. No deposit."
+        ),
     }
 
 
@@ -73,9 +64,9 @@ def business_entity() -> dict:
             "@type": "OfferCatalog",
             "name": "Home recovery equipment rentals",
             "itemListElement": [
-                offer("Medical-grade lift chair rental", 125),
-                offer("Sit-to-stand patient lift rental", 140),
-                offer("Hospital bed rental", 240),
+                offer("Medical-grade lift chair rental"),
+                offer("Sit-to-stand patient lift rental"),
+                offer("Hospital bed rental"),
             ],
         },
     }
@@ -179,7 +170,7 @@ PAGES = {
         "title": "Lift Chair & Medical Bed Rentals in DC, MD & VA | District Medical Rentals",
         "description": (
             "Rent medical-grade lift chairs, sit-to-stand lifts, and electronic medical beds delivered to your home in "
-            "Washington DC, Maryland, and Virginia. Lift chairs from $125/week. Call 917-346-5309."
+            "Washington DC, Maryland, and Virginia. Call or text 917-346-5309 for weekly rates."
         ),
         "path": "",
         "crumbs": None,
@@ -197,7 +188,7 @@ PAGES = {
     "rates.html": {
         "title": "Lift Chair, Sit-to-Stand & Medical Bed Rental Prices | District Medical Rentals",
         "description": (
-            "Lift recliners from $125/week, sit-to-stand lifts from $140/week, hospital beds from $240/week. "
+            "Call or text for weekly rates on lift recliners, sit-to-stand lifts, and hospital beds. "
             "Save 10% when you rent two or more. No deposit. Delivery in DC, Maryland, and Virginia."
         ),
         "path": "rates.html",

@@ -509,10 +509,20 @@ a {
   font-size: 1.05rem;
 }
 
-.product-price span {
-  color: var(--blue-ink);
-  font-size: 1.35rem;
-  letter-spacing: -0.03em;
+.product-price a,
+.rate-price a,
+.zone-fee a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.product-price a:hover,
+.product-price a:focus-visible,
+.rate-price a:hover,
+.rate-price a:focus-visible,
+.zone-fee a:hover,
+.zone-fee a:focus-visible {
+  text-decoration: underline;
 }
 
 .text-link {
@@ -1062,6 +1072,11 @@ a {
   color: var(--text-muted);
   margin-left: 0.2rem;
   letter-spacing: 0;
+}
+
+.rate-price-ask {
+  font-size: clamp(1.55rem, 3vw, 2.05rem);
+  letter-spacing: -0.03em;
 }
 
 .rate-card p:last-child {
