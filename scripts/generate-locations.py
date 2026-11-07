@@ -543,7 +543,7 @@ def page_html(loc: dict) -> str:
             <summary>What’s your pricing?</summary>
             <p>
               Call or text <a href="tel:+19173465309">917-346-5309</a> for weekly rates.
-              Save 10% when you rent two or more items. Rentals longer than 4 weeks are discounted, and there’s no deposit. See our
+              Save 10% when you rent two or more items. Rentals of 10 weeks or longer are discounted, and there’s no deposit. See our
               <a href="../rates.html">rates page</a>.
             </p>
           </details>

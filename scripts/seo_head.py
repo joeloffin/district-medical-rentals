@@ -35,7 +35,7 @@ def offer(name: str) -> dict:
         "@type": "Offer",
         "itemOffered": {"@type": "Service", "name": name},
         "description": (
-            "Call or text for the weekly rate. Discounts on rentals longer than 4 weeks; "
+            "Call or text for the weekly rate. Discounts on rentals of 10 weeks or longer; "
             "save 10% when renting two or more items together. No deposit."
         ),
     }
