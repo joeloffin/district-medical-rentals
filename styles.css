@@ -1019,14 +1019,6 @@ a {
 
 /* Rates */
 
-.rate-card-solo {
-  width: 100%;
-  max-width: 64rem;
-  margin: 0 auto 1.5rem;
-  text-align: center;
-  align-items: center;
-}
-
 .rate-grid {
   display: grid;
   gap: 1.5rem;
