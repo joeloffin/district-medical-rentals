@@ -46,6 +46,7 @@ def business_entity() -> dict:
         "@type": "MedicalBusiness",
         "@id": abs_url("#business"),
         "name": BUSINESS_NAME,
+        "legalName": "District Medical Rentals LLC",
         "url": abs_url(""),
         "logo": abs_url("images/logo.png"),
         "image": abs_url("images/og-image.jpg"),
@@ -179,7 +180,7 @@ PAGES = {
     "about.html": {
         "title": "About Us | Home Recovery Equipment Rentals in DC, MD & VA",
         "description": (
-            "District Medical Rentals is a local DC-area team renting clean, medical-grade lift "
+            "District Medical Rentals LLC is a local DC-area team renting clean, medical-grade lift "
             "chairs, sit-to-stand lifts, and electronic medical beds for recovery at home in Maryland, Virginia, and DC."
         ),
         "path": "about.html",

@@ -136,7 +136,7 @@ def page_html(day: date, article: dict, related: list[tuple[date, dict]]) -> str
 
     <footer class="site-footer">
       <img class="footer-logo" src="../images/logo.webp" alt="District Medical Rentals logo" width="120" height="136" />
-      <p class="footer-brand">District Medical Rentals</p>
+      <p class="footer-brand">District Medical Rentals LLC</p>
       <p>Medical-grade lift chairs, sit-to-stand lifts, and beds delivered in DC, Maryland, and Virginia.</p>
       <p><a href="tel:+19173465309">917-346-5309</a></p>
       <nav class="footer-nav" aria-label="Footer">
