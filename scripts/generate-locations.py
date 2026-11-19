@@ -16,169 +16,54 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "locations"
 CONFIG_PATH = ROOT / "site.config.json"
 
+# Counties and cities kept here are within about two hours of zip 22209
+# (Arlington). Farther places were removed from the location pages.
 MD_COUNTIES = [
-    "Allegany County",
     "Anne Arundel County",
     "Baltimore County",
     "Baltimore City",
     "Calvert County",
     "Caroline County",
     "Carroll County",
-    "Cecil County",
     "Charles County",
-    "Dorchester County",
     "Frederick County",
-    "Garrett County",
     "Harford County",
     "Howard County",
-    "Kent County",
     "Montgomery County",
     "Prince George's County",
     "Queen Anne's County",
-    "Somerset County",
     "St. Mary's County",
     "Talbot County",
     "Washington County",
-    "Wicomico County",
-    "Worcester County",
 ]
 
 VA_COUNTIES = [
-    "Accomack County",
-    "Albemarle County",
-    "Alleghany County",
-    "Amelia County",
-    "Amherst County",
-    "Appomattox County",
     "Arlington County",
-    "Augusta County",
-    "Bath County",
-    "Bedford County",
-    "Bland County",
-    "Botetourt County",
-    "Brunswick County",
-    "Buchanan County",
-    "Buckingham County",
-    "Campbell County",
     "Caroline County",
-    "Carroll County",
-    "Charles City County",
-    "Charlotte County",
-    "Chesterfield County",
     "Clarke County",
-    "Craig County",
     "Culpeper County",
-    "Cumberland County",
-    "Dickenson County",
-    "Dinwiddie County",
-    "Essex County",
     "Fairfax County",
     "Fauquier County",
-    "Floyd County",
-    "Fluvanna County",
-    "Franklin County",
     "Frederick County",
-    "Giles County",
-    "Gloucester County",
-    "Goochland County",
-    "Grayson County",
-    "Greene County",
-    "Greensville County",
-    "Halifax County",
     "Hanover County",
-    "Henrico County",
-    "Henry County",
-    "Highland County",
-    "Isle of Wight County",
-    "James City County",
-    "King and Queen County",
     "King George County",
-    "King William County",
-    "Lancaster County",
-    "Lee County",
     "Loudoun County",
-    "Louisa County",
-    "Lunenburg County",
-    "Madison County",
-    "Mathews County",
-    "Mecklenburg County",
-    "Middlesex County",
-    "Montgomery County",
-    "Nelson County",
-    "New Kent County",
-    "Northampton County",
-    "Northumberland County",
-    "Nottoway County",
     "Orange County",
-    "Page County",
-    "Patrick County",
-    "Pittsylvania County",
-    "Powhatan County",
-    "Prince Edward County",
-    "Prince George County",
     "Prince William County",
-    "Pulaski County",
     "Rappahannock County",
-    "Richmond County",
-    "Roanoke County",
-    "Rockbridge County",
-    "Rockingham County",
-    "Russell County",
-    "Scott County",
     "Shenandoah County",
-    "Smyth County",
-    "Southampton County",
     "Spotsylvania County",
     "Stafford County",
-    "Surry County",
-    "Sussex County",
-    "Tazewell County",
     "Warren County",
-    "Washington County",
-    "Westmoreland County",
-    "Wise County",
-    "Wythe County",
-    "York County",
 ]
 
 VA_CITIES = [
     "Alexandria",
-    "Bristol",
-    "Buena Vista",
-    "Charlottesville",
-    "Chesapeake",
-    "Colonial Heights",
-    "Covington",
-    "Danville",
-    "Emporia",
     "Fairfax",
     "Falls Church",
-    "Franklin",
     "Fredericksburg",
-    "Galax",
-    "Hampton",
-    "Harrisonburg",
-    "Hopewell",
-    "Lexington",
-    "Lynchburg",
     "Manassas",
     "Manassas Park",
-    "Martinsville",
-    "Newport News",
-    "Norfolk",
-    "Norton",
-    "Petersburg",
-    "Poquoson",
-    "Portsmouth",
-    "Radford",
-    "Richmond",
-    "Roanoke",
-    "Salem",
-    "Staunton",
-    "Suffolk",
-    "Virginia Beach",
-    "Waynesboro",
-    "Williamsburg",
     "Winchester",
 ]
 
@@ -652,8 +537,8 @@ def locations_index_html(locations: list[dict]) -> str:
     index_seo = seo.head_block(
         title="Lift Chair Rental Near You: DC, Maryland & Virginia | District Medical Rentals",
         description=(
-            "Find lift chair and medical bed rental delivery in your county or city across "
-            "Washington DC, Maryland, and Virginia. Medical-grade equipment delivered to your home."
+            "Find lift chair and medical bed rental delivery in counties and cities within "
+            "about two hours of Arlington, VA. Medical-grade equipment delivered to your home."
         ),
         path="locations.html",
         graph=[
@@ -712,8 +597,8 @@ def locations_index_html(locations: list[dict]) -> str:
       <header class="page-header">
         <h1>Lift chair rental locations</h1>
         <p>
-          Find District Medical Rentals delivery pages for counties and cities across Washington,
-          DC, Maryland, and Virginia.
+          Find District Medical Rentals delivery pages for counties and cities within about
+          two hours of Arlington, VA (22209).
         </p>
       </header>
 
@@ -763,11 +648,21 @@ def locations_index_html(locations: list[dict]) -> str:
 
 def write_sitemap(locations: list[dict], base_url: str) -> None:
     base = base_url.rstrip("/")
+    sitemap_path = ROOT / "sitemap.xml"
+    existing_lastmod = {}
+    if sitemap_path.exists():
+        existing_lastmod = dict(
+            re.findall(
+                r"<loc>(.*?)</loc>\s*<lastmod>(.*?)</lastmod>",
+                sitemap_path.read_text(encoding="utf-8"),
+            )
+        )
     urls = [
         "",
         "/about.html",
         "/rates.html",
         "/contact.html",
+        "/hsa-fsa.html",
         "/privacy.html",
         "/locations.html",
     ]
@@ -783,12 +678,13 @@ def write_sitemap(locations: list[dict], base_url: str) -> None:
     ]
     today = date.today().isoformat()
     for path in urls:
+        loc = f"{base}{path if path else '/'}"
         parts.append("  <url>")
-        parts.append(f"    <loc>{base}{path if path else '/'}</loc>")
-        parts.append(f"    <lastmod>{today}</lastmod>")
+        parts.append(f"    <loc>{loc}</loc>")
+        parts.append(f"    <lastmod>{existing_lastmod.get(loc, today)}</lastmod>")
         parts.append("  </url>")
     parts.append("</urlset>")
-    (ROOT / "sitemap.xml").write_text("\n".join(parts) + "\n", encoding="utf-8")
+    sitemap_path.write_text("\n".join(parts) + "\n", encoding="utf-8")
 
 
 def main() -> None:
