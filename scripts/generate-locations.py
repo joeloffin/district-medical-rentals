@@ -368,6 +368,24 @@ def page_html(loc: dict) -> str:
           </p>
         </div>
 
+        <div class="hsa-stamps">
+          <a class="hsa-stamp" href="../hsa-fsa.html">
+            <span class="hsa-stamp-ring">
+              <span class="hsa-stamp-kicker">Eligible</span>
+              <strong>HSA</strong>
+              <span class="hsa-stamp-sub">Funds</span>
+            </span>
+          </a>
+          <a class="hsa-stamp hsa-stamp-alt" href="../hsa-fsa.html">
+            <span class="hsa-stamp-ring">
+              <span class="hsa-stamp-kicker">Eligible</span>
+              <strong>FSA</strong>
+              <span class="hsa-stamp-sub">Funds</span>
+            </span>
+          </a>
+          <p class="hsa-stamps-note">May qualify for reimbursement when medically necessary. <a href="../hsa-fsa.html">See how</a></p>
+        </div>
+
         <div class="product-grid">
           <article class="product">
             <div class="product-visual product-visual-chairs">
@@ -579,6 +597,7 @@ def page_html(loc: dict) -> str:
         <a href="../rates.html">Rates</a>
         <a href="../contact.html">Contact</a>
         <a href="../locations.html">Locations</a>
+        <a href="../hsa-fsa.html">HSA/FSA</a>
         <a href="../privacy.html">Privacy Policy</a>
       </nav>
     </footer>
@@ -731,6 +750,7 @@ def locations_index_html(locations: list[dict]) -> str:
         <a href="rates.html">Rates</a>
         <a href="contact.html">Contact</a>
         <a href="locations.html">Locations</a>
+        <a href="hsa-fsa.html">HSA/FSA</a>
         <a href="privacy.html">Privacy Policy</a>
       </nav>
     </footer>

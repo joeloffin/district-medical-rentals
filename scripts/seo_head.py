@@ -186,6 +186,17 @@ PAGES = {
         "path": "about.html",
         "crumbs": [("Home", ""), ("About", "about.html")],
     },
+    "hsa-fsa.html": {
+        "title": "HSA and FSA Reimbursement for Medical Equipment Rentals",
+        "description": (
+            "District Medical Rentals LLC accepts standard payment methods. Lift chair, hospital bed, "
+            "and sit-to-stand lift rentals may qualify for HSA/FSA reimbursement when medically necessary. "
+            "We provide an itemized receipt for your plan administrator."
+        ),
+        "path": "hsa-fsa.html",
+        "crumbs": [("Home", ""), ("HSA/FSA", "hsa-fsa.html")],
+        "business": True,
+    },
     "rates.html": {
         "title": "Lift Chair, Sit-to-Stand & Medical Bed Rental Prices | District Medical Rentals",
         "description": (

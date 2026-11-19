@@ -375,11 +375,126 @@ a {
 .trust-bar {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 2.5rem 1.25rem;
+  padding: 2.5rem 1.25rem 1rem;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem 1.25rem;
   list-style: none;
+}
+
+.hsa-stamps {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem 1.1rem;
+  margin: 0 auto 1.5rem;
+}
+
+.hsa-stamp {
+  width: 124px;
+  height: 124px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  color: var(--blue-dark);
+  background: repeating-conic-gradient(
+    from 0deg,
+    var(--blue-bright) 0 7deg,
+    var(--blue-dark) 7deg 14deg
+  );
+  box-shadow: var(--shadow-md), 0 10px 24px rgba(11, 58, 102, 0.16);
+  transform: rotate(-8deg);
+  transition: transform 0.2s ease;
+}
+
+.hsa-stamp-alt {
+  transform: rotate(7deg);
+}
+
+.hsa-stamp:hover,
+.hsa-stamp:focus-visible {
+  transform: rotate(0deg) scale(1.05);
+}
+
+.hsa-stamp-ring {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 2px dashed var(--blue-ink);
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1;
+  gap: 0.18rem;
+}
+
+.hsa-stamp-kicker,
+.hsa-stamp-sub {
+  font-family: var(--font-display);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--blue-ink);
+}
+
+.hsa-stamp strong {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--blue-dark);
+}
+
+.hsa-stamps-note {
+  flex-basis: 100%;
+  margin: 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+}
+
+.hsa-stamps-note a {
+  color: var(--blue-ink);
+  font-weight: 700;
+}
+
+.hsa-card {
+  display: block;
+  margin: 0 auto 2.75rem;
+  max-width: 46rem;
+  padding: 1.5rem 1.35rem 1.4rem;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md), var(--shadow-glow);
+  border-top: 5px solid var(--blue-bright);
+}
+
+.hsa-card h2 {
+  margin: 0.2rem 0 0.65rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 3vw, 1.85rem);
+  color: var(--blue-dark);
+  letter-spacing: -0.035em;
+}
+
+.hsa-card p {
+  margin: 0 auto;
+  max-width: 38rem;
+  color: var(--text-muted);
+}
+
+.hsa-card .text-link {
+  display: inline-block;
+  margin-top: 0.9rem;
 }
 
 .trust-item {

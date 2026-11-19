@@ -145,6 +145,7 @@ def page_html(day: date, article: dict, related: list[tuple[date, dict]]) -> str
         <a href="../rates.html">Rates</a>
         <a href="../contact.html">Contact</a>
         <a href="../locations.html">Locations</a>
+        <a href="../hsa-fsa.html">HSA/FSA</a>
         <a href="../privacy.html">Privacy Policy</a>
       </nav>
     </footer>
@@ -225,10 +226,12 @@ def main() -> None:
         same_day = [(d, item) for d, item in published if d == day]
         target.write_text(page_html(day, article, same_day), encoding="utf-8")
         written += 1
-    # Remove anything published ahead of schedule if the clock moved backward.
+    # Remove scheduled articles that are not due yet. Leave other article
+    # files alone so evergreen insurance reads stay published.
+    scheduled = {article["slug"] for article in ARTICLES}
     live_slugs = {article["slug"] for _, article in published}
     for path in ARTICLES_DIR.glob("*.html"):
-        if path.stem not in live_slugs:
+        if path.stem in scheduled and path.stem not in live_slugs:
             path.unlink()
     update_about(published)
     update_sitemap(published)
