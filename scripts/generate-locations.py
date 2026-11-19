@@ -372,10 +372,10 @@ def page_html(loc: dict) -> str:
               />
             </div>
             <div class="product-copy">
-              <h3>Sit-to-stand patient lifts</h3>
+              <h3>Arjo Sara sit-to-stand lifts</h3>
               <p>
-                A standing aid that helps a caregiver raise someone from a chair, bed, wheelchair,
-                or toilet. Available for rental delivery in {in_place}.
+                The Arjo Sara is an electronic sit-to-stand lift that helps a caregiver raise someone
+                from a chair, bed, wheelchair, or toilet. Available for rental delivery in {in_place}.
               </p>
               <div class="product-meta">
                 <p class="product-price"><a href="tel:+19173465309">Call or text for rates</a></p>
@@ -506,7 +506,7 @@ def page_html(loc: dict) -> str:
         },
         "offers": [
             seo.offer("Medical-grade lift chair rental"),
-            seo.offer("Sit-to-stand patient lift rental"),
+            seo.offer("Arjo Sara electronic sit-to-stand lift rental"),
             seo.offer("Hospital bed rental"),
         ],
     }

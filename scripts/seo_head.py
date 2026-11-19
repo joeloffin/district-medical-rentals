@@ -66,7 +66,7 @@ def business_entity() -> dict:
             "name": "Home recovery equipment rentals",
             "itemListElement": [
                 offer("Medical-grade lift chair rental"),
-                offer("Sit-to-stand patient lift rental"),
+                offer("Arjo Sara electronic sit-to-stand lift rental"),
                 offer("Hospital bed rental"),
             ],
         },
